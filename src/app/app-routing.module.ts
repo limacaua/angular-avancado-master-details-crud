@@ -5,6 +5,12 @@ const routes: Routes = [
   { path:'categories', loadChildren:'./pages/categories/categories.module#CategoriesModule' }
 ];
 
+const routes: Routes = [
+
+    { path: 'categories', loadChildren: () => import('./pages/categories/categories.module#CategoriesModule').then(m => m.#CategoriesModule) },
+
+  ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
