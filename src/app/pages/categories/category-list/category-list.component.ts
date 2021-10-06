@@ -12,13 +12,14 @@ export class CategoryListComponent implements OnInit {
 
   categories: Category[] = []
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(
+    private categoryService: CategoryService) { }
 
   ngOnInit(): void {
     this.categoryService.getALL().subscribe(
       categories => this.categories = categories,
       error => alert('Erro ao carregar a lista')
     )
-  }
+ }
 
 }
